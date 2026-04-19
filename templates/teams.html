@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+    <h1>Teams</h1>
+    <table id = 'Teams_table' border="1">
+        <thead>
+        <tr>
+            <th>Team</th>
+            <th>Engine</th>
+            <th>Base</th>
+            <th>First_Team_Entry</th>
+            <th>President</th>
+            <th>World_championships</th>
+            <th>Pole_Position</th>
+            <th>Fastest_Laps</th>
+            <th>Highest_Race_Finish</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for team in teams['response'] %}
+            <tr>
+                <td>{{ team['name'] }}</td>
+                <td>{{ team['engine'] }}</td>
+                <td>{{ team['base'] }}</td>
+                <td>{{ team['first_team_entry'] }}</td>
+                <td>{{ team['president'] }}</td>
+                <td>{{ team['world_championships'] }}</td>
+                <td>{{ team['pole_positions'] }}</td>
+                <td>{{ team['fastest_laps'] }}</td>
+                <td>{{ team['highest_race_finish']['number'] }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

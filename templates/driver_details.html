@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Details</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+
+    {% for driver in drivers_details['response'] %}
+
+        <h1>{{ driver['name'] }}</h1>
+        <p><strong>Id:</strong> {{ driver['id'] }}</p>
+        <p><strong>Number:</strong> {{ driver['number'] }}</p>
+        <p><strong>DOB:</strong> {{ driver['birthdate'] }}</p>
+        <p><strong>Birth Place:</strong> {{ driver['birthplace'] }}</p>
+        <p><strong>Nationality:</strong> {{ driver['nationality'] }}</p>
+        <p><strong>Career Points:</strong> {{ driver['career_points'] }}</p>
+        <p><strong>Grand Prix Entered:</strong> {{ driver['grands_prix_entered'] }}</p>
+        <p><strong>World Championships:</strong> {{ driver['world_championships'] }}</p>
+        <h3><strong>Highest Race Finish</strong></h3>
+        <p><strong>Position:</strong> {{ driver['highest_race_finish']['position'] }}</p>
+        <p><strong>Position:</strong> {{ driver['highest_race_finish']['number'] }}</p>
+
+
+    {% endfor %}
+
+</body>
+</html>

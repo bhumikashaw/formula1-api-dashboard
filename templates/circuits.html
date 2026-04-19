@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circuis Details</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+    <h1>Cuircuits List</h1>
+
+    <table id="circuit-table" border="1">
+        <thead>
+            <tr>
+                <th>Opened</th>
+                <th>First_grand_prix</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Laps</th>
+                <th>Lenght</th>
+                <th>Race_distance"</th>
+                <th>Capacity</th>
+                <th>Fastest_lap_driver</th>
+                <th>Fastest_lap_time</th>
+                <th>Fastest_lap_year</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for race in races['response'] %}
+            <tr>
+                <td>{{ race['opened'] }}</td>
+                <td>{{ race['first_grand_prix'] }}</td>
+                <td>{{ race['name'] }}</td>
+                <td>{{ race['competition']['location']['country'] }}</td>
+                <td>{{ race['laps']}}</td>
+                <td>{{ race['length']}}</td>
+                <td>{{ race['race_distance']}}</td>
+                <td>{{ race['capacity']}}</td>
+                <td>{{ race['lap_record']['driver']}}</td>
+                <td>{{race['lap_record']['time']}}</td>
+                <td>{{race['lap_record']['year']}}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

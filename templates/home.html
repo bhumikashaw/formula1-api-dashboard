@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formula 1</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+    <h1>Formula 1</h1>
+
+    <h3>Select a season to see races</h3>
+    <form action="/races" method="GET">
+        <select name="season">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+
+        <button type="submit">View Races</button>
+    </form><br>
+
+    <h3>Tap 'circuits' to see overall circuits</h3>
+    <form action="/circuits" method="GET">
+            <input type="submit" value="circuits">
+    </form><br>
+
+    <h3>Tap 'Teams' to see overall Teams</h3>
+    <form action="/teams" method="GET">
+            <input type="submit" value="Teams">
+    </form><br>
+
+
+    <h3>Select a season to see drivers ranking</h3>
+    <form action="/drivers" method="GET">
+        <select name="season">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+
+        <button type="submit">View Drivers</button>
+    </form><br>
+
+    <h3>Select a season to see drivers  Visualization</h3>
+    <form action="/visualization" method="GET">
+        <select name="season">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+        <input type="submit" value='Visualization'>
+    </form>
+
+</body>
+</html>

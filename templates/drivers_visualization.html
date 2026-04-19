@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area of Visualizations</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+<h2>Choose any race to see visualization for that race</h2>
+<form method="GET">
+    <input type="hidden" name="season" value="{{ request.args.get('season') }}">
+
+    <select name="race">
+        {% for item in races %}
+        {% if item['type'] == "Race" %}
+            <option value="{{ item['id'] }}">{{ item['competition']['name'] }}</option>
+        {% endif %}
+        {% endfor %}
+    </select><br><br>
+
+    <button type="submit" formaction="/lap_visualization">
+        Lap Visualization
+    </button><br><br>
+
+    <button type="submit" formaction="/pit_visualization">
+        Pit Visualization
+    </button>
+    <h2>Click below to see Teams performance for the selected season</h2>
+    <button type="submit" formaction="/Team_visualization">
+        Team Visualization
+    </button>
+</form>
+</body>
+</html>
+</body>
+</html>

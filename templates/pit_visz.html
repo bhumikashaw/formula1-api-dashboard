@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pit visualization</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+    <form action="/pit_visualization" method="GET">
+    <h2>Pit Stop Comparison (Team-wise)</h2>
+    {{ graph | safe }}
+
+    <h2>Pit Stop Consistency (Box Plot)</h2>
+    {{ box_plot | safe }}
+
+    <h2>Pit Stop Heatmap</h2>
+     {{ heat_plot | safe }}
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>visulization</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+</style>
+    <form action="/lap_visualization" method="GET">
+        <h2>Fastest Lap Comparison</h2>
+    <div>
+        {{ graph1 | safe }}
+    </div>
+
+        <h2>Average speed Comparison</h2>
+     <div>
+        {{ graph2 | safe }}
+    </div>
+
+    </form>
+
+
+
+
+</body>
+</html>

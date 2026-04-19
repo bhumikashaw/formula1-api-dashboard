@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drivers_Ranking</title>
+</head>
+<body>
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        color: #e5e5e5;
+        font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3 {
+        color: #d1d5db;
+    }
+     a {
+        color: orange;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #d1d5db;  /* light grey on hover */
+    }
+</style>
+    <h1>Drivers Ranking</h1>
+    <table id = 'drivers_ranking_table' border="1">
+        <thead>
+        <tr>
+            <th>Position</th>
+            <th>Id</th>
+            <th>Abbr</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Team Name</th>
+            <th>Points</th>
+            <th>Wins</th>
+            <th>Behind</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for driver in drivers['response'] %}
+            <tr>
+                <td>{{ driver['position']}}</td>
+                <td>{{ driver['driver']['id'] }}</td>
+                <td>{{ driver['driver']['abbr'] }}</td>
+                <td>
+                <a href="{{ url_for('driver_details', driver_name=driver['driver']['name']) }}">
+                    {{ driver['driver']['name'] }}
+                </a>
+                </td>
+                <td>{{ driver['driver']['number'] }}</td>
+                <td>{{ driver['team']['name'] }}</td>
+                <td>{{ driver['points'] }}</td>
+                <td>{{ driver['wins'] }}</td>
+                <td>{{ driver['behind'] }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
