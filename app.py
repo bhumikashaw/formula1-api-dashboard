@@ -376,5 +376,5 @@ def team_visualization():
     bar_html = pio.to_html(fig, full_html=False)
     return render_template("team_visz.html",team_plot=bar_html)
 
-
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
